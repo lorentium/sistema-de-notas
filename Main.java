@@ -28,6 +28,16 @@ public class Main {
         System.out.println("cantidad de notas menores a 3.6: " + menorTresSeis);
         System.out.println("cantidad de notas en el rango [3.6, 4.0): " + entreTresSeisYCuatro);
 
+        // programacion funcional
+        long mayorCuatroFuncional = Arrays.stream(notas).parallel().filter(n -> n > 4.0).count();
+        long menorTresSeisFuncional = Arrays.stream(notas).parallel().filter(n -> n < 3.6).count();
+        long entreTresSeisYCuatroFuncional = Arrays.stream(notas).parallel().filter(n -> n >= 3.6 && n < 4.0).count();
+
+        System.out.println("\nenfoque Funcional:");
+        System.out.println("cantidad de notas mayores a 4.0: " + mayorCuatroFuncional);
+        System.out.println("cantidad de notas menores a 3.6: " + menorTresSeisFuncional);
+        System.out.println("cantidad de notas en el rango [3.6, 4.0): " + entreTresSeisYCuatroFuncional);
+
     }
 
     public static double[] generarNotas(int cantidadNotas) {
